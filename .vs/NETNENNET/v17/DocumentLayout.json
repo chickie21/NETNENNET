@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Classes\\.NET\\NETNENNET\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|d:\\classes\\.net\\netnennet\\netnennet\\traluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\traluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|D:\\Classes\\.NET\\NETNENNET\\netnennet\\phieunhaphang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\phieunhaphang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|D:\\Classes\\.NET\\NETNENNET\\netnennet\\baotri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\baotri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TRALUONG.cs [Design]",
+              "DocumentMoniker": "D:\\Classes\\.NET\\NETNENNET\\NETNENNET\\TRALUONG.cs",
+              "RelativeDocumentMoniker": "NETNENNET\\TRALUONG.cs",
+              "ToolTip": "D:\\Classes\\.NET\\NETNENNET\\NETNENNET\\TRALUONG.cs [Design]",
+              "RelativeToolTip": "NETNENNET\\TRALUONG.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T07:00:03.688Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PHIEUNHAPHANG.cs [Design]",
+              "DocumentMoniker": "D:\\Classes\\.NET\\NETNENNET\\NETNENNET\\PHIEUNHAPHANG.cs",
+              "RelativeDocumentMoniker": "NETNENNET\\PHIEUNHAPHANG.cs",
+              "ToolTip": "D:\\Classes\\.NET\\NETNENNET\\NETNENNET\\PHIEUNHAPHANG.cs [Design]",
+              "RelativeToolTip": "NETNENNET\\PHIEUNHAPHANG.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T06:50:26.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BAOTRI.cs [Design]",
+              "DocumentMoniker": "D:\\Classes\\.NET\\NETNENNET\\NETNENNET\\BAOTRI.cs",
+              "RelativeDocumentMoniker": "NETNENNET\\BAOTRI.cs",
+              "ToolTip": "D:\\Classes\\.NET\\NETNENNET\\NETNENNET\\BAOTRI.cs [Design]",
+              "RelativeToolTip": "NETNENNET\\BAOTRI.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T06:29:02.555Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
