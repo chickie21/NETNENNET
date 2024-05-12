@@ -1,6 +1,6 @@
 ﻿namespace NETNENNET
 {
-    partial class THUCPHAM
+    partial class frmThucpham
     {
         /// <summary>
         /// Required designer variable.
@@ -34,17 +34,17 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.DatagridviewDMthucpham = new System.Windows.Forms.DataGridView();
+            this.DatagridviewThucpham = new System.Windows.Forms.DataGridView();
             this.cboMaDMSP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTenDMTP = new System.Windows.Forms.TextBox();
-            this.txtMaDMTP = new System.Windows.Forms.TextBox();
+            this.txtTenTP = new System.Windows.Forms.TextBox();
+            this.txtMaTP = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSoluong = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DatagridviewDMthucpham)).BeginInit();
+            this.cboMaDMTP = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridviewThucpham)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDong
@@ -101,15 +101,15 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // DatagridviewDMthucpham
+            // DatagridviewThucpham
             // 
-            this.DatagridviewDMthucpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatagridviewDMthucpham.Location = new System.Drawing.Point(41, 236);
-            this.DatagridviewDMthucpham.Name = "DatagridviewDMthucpham";
-            this.DatagridviewDMthucpham.RowHeadersWidth = 51;
-            this.DatagridviewDMthucpham.RowTemplate.Height = 24;
-            this.DatagridviewDMthucpham.Size = new System.Drawing.Size(1068, 278);
-            this.DatagridviewDMthucpham.TabIndex = 78;
+            this.DatagridviewThucpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DatagridviewThucpham.Location = new System.Drawing.Point(41, 236);
+            this.DatagridviewThucpham.Name = "DatagridviewThucpham";
+            this.DatagridviewThucpham.RowHeadersWidth = 51;
+            this.DatagridviewThucpham.RowTemplate.Height = 24;
+            this.DatagridviewThucpham.Size = new System.Drawing.Size(1068, 278);
+            this.DatagridviewThucpham.TabIndex = 78;
             // 
             // cboMaDMSP
             // 
@@ -130,19 +130,19 @@
             this.label1.TabIndex = 75;
             this.label1.Text = "THỰC PHẨM\r\n";
             // 
-            // txtTenDMTP
+            // txtTenTP
             // 
-            this.txtTenDMTP.Location = new System.Drawing.Point(209, 165);
-            this.txtTenDMTP.Name = "txtTenDMTP";
-            this.txtTenDMTP.Size = new System.Drawing.Size(294, 22);
-            this.txtTenDMTP.TabIndex = 74;
+            this.txtTenTP.Location = new System.Drawing.Point(209, 165);
+            this.txtTenTP.Name = "txtTenTP";
+            this.txtTenTP.Size = new System.Drawing.Size(294, 22);
+            this.txtTenTP.TabIndex = 74;
             // 
-            // txtMaDMTP
+            // txtMaTP
             // 
-            this.txtMaDMTP.Location = new System.Drawing.Point(209, 109);
-            this.txtMaDMTP.Name = "txtMaDMTP";
-            this.txtMaDMTP.Size = new System.Drawing.Size(294, 22);
-            this.txtMaDMTP.TabIndex = 73;
+            this.txtMaTP.Location = new System.Drawing.Point(209, 109);
+            this.txtMaTP.Name = "txtMaTP";
+            this.txtMaTP.Size = new System.Drawing.Size(294, 22);
+            this.txtMaTP.TabIndex = 73;
             // 
             // label8
             // 
@@ -178,20 +178,20 @@
             this.txtSoluong.Size = new System.Drawing.Size(294, 22);
             this.txtSoluong.TabIndex = 86;
             // 
-            // comboBox1
+            // cboMaDMTP
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(704, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(294, 24);
-            this.comboBox1.TabIndex = 87;
+            this.cboMaDMTP.FormattingEnabled = true;
+            this.cboMaDMTP.Location = new System.Drawing.Point(704, 109);
+            this.cboMaDMTP.Name = "cboMaDMTP";
+            this.cboMaDMTP.Size = new System.Drawing.Size(294, 24);
+            this.cboMaDMTP.TabIndex = 87;
             // 
-            // THUCPHAM
+            // frmThucpham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 592);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboMaDMTP);
             this.Controls.Add(this.txtSoluong);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDong);
@@ -200,16 +200,16 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.DatagridviewDMthucpham);
+            this.Controls.Add(this.DatagridviewThucpham);
             this.Controls.Add(this.cboMaDMSP);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTenDMTP);
-            this.Controls.Add(this.txtMaDMTP);
+            this.Controls.Add(this.txtTenTP);
+            this.Controls.Add(this.txtMaTP);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Name = "THUCPHAM";
+            this.Name = "frmThucpham";
             this.Text = "THUCPHAM";
-            ((System.ComponentModel.ISupportInitialize)(this.DatagridviewDMthucpham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridviewThucpham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,15 +223,15 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView DatagridviewDMthucpham;
+        private System.Windows.Forms.DataGridView DatagridviewThucpham;
         private System.Windows.Forms.Label cboMaDMSP;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTenDMTP;
-        private System.Windows.Forms.TextBox txtMaDMTP;
+        private System.Windows.Forms.TextBox txtTenTP;
+        private System.Windows.Forms.TextBox txtMaTP;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSoluong;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboMaDMTP;
     }
 }
