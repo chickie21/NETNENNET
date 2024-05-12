@@ -72,8 +72,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="THUCPHAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="THUCPHAM.Designer.cs">
+      <DependentUpon>THUCPHAM.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DMTHUCPHAM.resx">
       <DependentUpon>DMTHUCPHAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NHABAOTRI.resx">
       <DependentUpon>NHABAOTRI.cs</DependentUpon>
@@ -90,6 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="THUCPHAM.resx">
+      <DependentUpon>THUCPHAM.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

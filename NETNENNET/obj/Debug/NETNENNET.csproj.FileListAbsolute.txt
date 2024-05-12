@@ -1,0 +1,12 @@
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\bin\Debug\NETNENNET.exe.config
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\bin\Debug\NETNENNET.exe
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\bin\Debug\NETNENNET.pdb
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.AssemblyReference.cache
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmDMThucpham.resources
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmDMNhabaotri.resources
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmDMNhanvien.resources
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.Properties.Resources.resources
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.GenerateResource.cache
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.CoreCompileInputs.cache
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.exe
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.pdb
