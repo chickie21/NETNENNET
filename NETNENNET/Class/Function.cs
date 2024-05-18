@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.SqlClient;
+using System.Windows.Forms;
 // Bên trên có rồi mà bạn   viet lai di xem duoc khong, kieu du lieu datatable sao khong duoc
 
 namespace NETNENNET.Class
@@ -43,11 +43,61 @@ namespace NETNENNET.Class
             myData.Fill(table);
             return table;
         }
+        //Ơ lỗi rồi, các máy đang bị dính giờ lẫn nhau, vừa mở cái tắt ngay nhưng vẫn bị dính giờ của lần thuê trc =))
 
-        //ExecuteQuery
-        public static void ExecuteQuery(string sql)
+        //GetFieldValues
+        public static string GetFieldValues(string sql)
         {
-            
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, Function.Connection);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            return ma;
+
+        }
+
+        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Function.Connection);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            cbo.DataSource = table;
+
+            cbo.ValueMember = ma;    // Truong gia tri
+            cbo.DisplayMember = ten;    // Truong hien thi
+        }
+
+        public static void FillCombo2(string sql, ComboBox cbo, string ma)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Function.Connection);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            cbo.DataSource = table;
+
+            cbo.ValueMember = ma;    // Truong gia tri
+        }
+        public static void RunSQL(string sql)
+        {
+            SqlCommand cmd;		                // Khai báo đối tượng SqlCommand
+            cmd = new SqlCommand();	         // Khởi tạo đối tượng
+            cmd.Connection = Function.Connection;	  // Gán kết nối
+            cmd.CommandText = sql;			  // Gán câu lệnh SQL
+            try
+            {
+                cmd.ExecuteNonQuery();		  // Thực hiện câu lệnh SQL
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            cmd.Dispose();
+            cmd = null;
         }
     }
 }//duoc roi, viet duoc datatable roi do
+
