@@ -1,0 +1,406 @@
+﻿CREATE DATABASE NETNENNET
+GO
+
+CREATE TABLE tblDONGIA (
+    MaDonGia VARCHAR(10) PRIMARY KEY,
+    DonGia MONEY NOT NULL
+)
+GO
+
+INSERT INTO tblDONGIA VALUES ('DG001', 10000)
+INSERT INTO tblDONGIA VALUES ('DG002', 20000)
+INSERT INTO tblDONGIA VALUES ('DG003', 30000)
+GO
+
+
+CREATE TABLE tblPHONG (
+    MaPhong VARCHAR(10) PRIMARY KEY,
+    TenPhong NVARCHAR(50) NOT NULL,
+    MaDonGia VARCHAR(10) NOT NULL,
+	SoMay INT NOT NULL,
+    FOREIGN KEY (MaDonGia) REFERENCES tblDONGIA(MaDonGia)
+)
+GO
+
+
+INSERT INTO tblPHONG VALUES ('P001', 'BASIC', 'DG001', 25)
+INSERT INTO tblPHONG VALUES ('P002', 'VIP', 'DG002', 25)
+INSERT INTO tblPHONG VALUES ('P003', 'SVIP', 'DG003', 25)
+GO
+
+CREATE TABLE tblDUNGLUONG(
+    MaDungLuong VARCHAR(10) PRIMARY KEY,
+    DungLuong INT NOT NULL
+)
+GO
+
+
+INSERT INTO tblDUNGLUONG VALUES ('RAM001', 8)
+INSERT INTO tblDUNGLUONG VALUES ('RAM002', 16)
+INSERT INTO tblDUNGLUONG VALUES ('RAM003', 32)
+INSERT INTO tblDUNGLUONG VALUES ('ROM001', 128)
+INSERT INTO tblDUNGLUONG VALUES ('ROM002', 256)
+INSERT INTO tblDUNGLUONG VALUES ('ROM003', 512)
+GO
+
+CREATE TABLE tblOCUNG (
+    MaOCung VARCHAR(10) PRIMARY KEY,
+    TenOCung NVARCHAR(50) NOT NULL,
+    MaDungLuong VARCHAR(10) NOT NULL,
+    FOREIGN KEY (MaDungLuong) REFERENCES tblDUNGLUONG(MaDungLuong)
+)
+GO
+
+INSERT INTO tblOCUNG VALUES ('OC001', 'Kingston', 'ROM003')
+INSERT INTO tblOCUNG VALUES ('OC002', 'WD', 'ROM002')
+INSERT INTO tblOCUNG VALUES ('OC003', 'Seagate', 'ROM003')
+GO
+
+CREATE TABLE tblCHIP (
+    MaChip VARCHAR(10) PRIMARY KEY,
+    TenChip NVARCHAR(50) NOT NULL
+)
+GO
+
+INSERT INTO tblCHIP VALUES ('CHIP001', 'Intel Core i9 9900K')
+INSERT INTO tblCHIP VALUES ('CHIP002', 'AMD Ryzen 7 3700X')
+INSERT INTO tblCHIP VALUES ('CHIP003', 'AMD Ryzen 9 3900X')
+GO
+
+CREATE TABLE tblRAM (
+    MaRAM VARCHAR(10) PRIMARY KEY,
+    TenRAM NVARCHAR(50) NOT NULL,
+    MaDungLuong VARCHAR(10) NOT NULL,
+    FOREIGN KEY (MaDungLuong) REFERENCES tblDUNGLUONG(MaDungLuong)
+)
+GO
+
+INSERT INTO tblRAM VALUES ('RAM001', 'Kingston', 'RAM001')
+INSERT INTO tblRAM VALUES ('RAM002', 'Corsair', 'RAM002')
+INSERT INTO tblRAM VALUES ('RAM003', 'Corsairr', 'RAM003')
+GO
+
+CREATE TABLE tblMANHINH (
+    MaManHinh VARCHAR(10) PRIMARY KEY,
+    TenManHinh NVARCHAR(50) NOT NULL
+)
+GO
+
+INSERT INTO tblMANHINH VALUES ('MH001', 'BenQ')
+INSERT INTO tblMANHINH VALUES ('MH002', 'ViewSonic')
+INSERT INTO tblMANHINH VALUES ('MH003', 'EDRA')
+GO
+
+
+CREATE TABLE tblCOMANHINH (
+    MaCoManHinh VARCHAR(10) PRIMARY KEY,
+    TenCoManHinh NVARCHAR(50) NOT NULL
+)
+GO
+
+INSERT INTO tblCOMANHINH VALUES ('CMH001', '24 inch')
+INSERT INTO tblCOMANHINH VALUES ('CMH002', '27 inch')
+INSERT INTO tblCOMANHINH VALUES ('CMH003', '32 inch')
+GO
+
+CREATE TABLE tblCHUOT (
+    MaChuot VARCHAR(10) PRIMARY KEY,
+    TenChuot NVARCHAR(50) NOT NULL
+)
+GO
+
+INSERT INTO tblCHUOT VALUES ('CH001', 'Logitech')
+INSERT INTO tblCHUOT VALUES ('CH002', 'Corsair')
+INSERT INTO tblCHUOT VALUES ('CH003', 'Zowie')
+GO
+
+
+CREATE TABLE tblBANPHIM (
+    MaBanPhim VARCHAR(10) PRIMARY KEY,
+    TenBanPhim NVARCHAR(50) NOT NULL
+)
+GO
+
+INSERT INTO tblBANPHIM VALUES ('BP001', 'Logitech')
+INSERT INTO tblBANPHIM VALUES ('BP002', 'Corsair')
+INSERT INTO tblBANPHIM VALUES ('BP003', 'Zowie')
+GO
+
+
+CREATE TABLE tblLOA (
+    MaLoa VARCHAR(10) PRIMARY KEY,
+    TenLoa NVARCHAR(50) NOT NULL
+)
+GO
+
+INSERT INTO tblLOA VALUES ('LOA001', 'JBLLL')
+INSERT INTO tblLOA VALUES ('LOA002', 'Marshall')
+INSERT INTO tblLOA VALUES ('LOA003', 'JBL')
+INSERT INTO tblLOA VALUES ('LOA004', 'Bose')
+GO
+SELECT * FROM tblTHUEMAY
+CREATE TABLE tblMAYTINH (
+    MaMay VARCHAR(10) PRIMARY KEY,
+    MaPhong VARCHAR(10) NOT NULL,
+    MaOCung VARCHAR(10) NOT NULL,
+    MaRAM VARCHAR(10) NOT NULL,
+    MaChip VARCHAR(10) NOT NULL,
+    MaManHinh VARCHAR(10) NOT NULL,
+    MaCoManHinh VARCHAR(10) NOT NULL,
+    MaChuot VARCHAR(10) NOT NULL,
+    MaBanPhim VARCHAR(10) NOT NULL,
+    MaLoa VARCHAR(10) NOT NULL,
+    TinhTrang BIT NOT NULL,
+	TinhTrangThue NVARCHAR(10) NOT NULL,
+    GhiChu NVARCHAR(50),
+    FOREIGN KEY (MaOCung) REFERENCES tblOCUNG(MaOCung),
+    FOREIGN KEY (MaRAM) REFERENCES tblRAM(MaRAM),
+    FOREIGN KEY (MaChip) REFERENCES tblCHIP(MaChip),
+    FOREIGN KEY (MaManHinh) REFERENCES tblMANHINH(MaManHinh),
+    FOREIGN KEY (MaCoManHinh) REFERENCES tblCOMANHINH(MaCoManHinh),
+    FOREIGN KEY (MaChuot) REFERENCES tblCHUOT(MaChuot),
+    FOREIGN KEY (MaBanPhim) REFERENCES tblBANPHIM(MaBanPhim),
+    FOREIGN KEY (MaLoa) REFERENCES tblLOA(MaLoa),
+
+)
+GO
+
+INSERT INTO tblMAYTINH VALUES
+('MT101', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT102', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT103', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT104', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT105', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT106', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT107', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT108', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT109', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT110', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT111', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT112', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT113', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT114', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT115', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT116', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT117', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT118', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT119', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT120', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT121', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT122', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT123', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT124', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good'),
+('MT125', 'P001', 'OC001', 'RAM001', 'CHIP001', 'MH001','CMH001', 'CH001', 'BP001', 'LOA001', 1,N'Chưa thuê', 'Good');
+
+
+
+INSERT INTO tblMAYTINH VALUES
+('MT201', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT202', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT203', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT204', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT205', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT206', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT207', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT208', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT209', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT210', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT211', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT212', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT213', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT214', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT215', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT216', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT217', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT218', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT219', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT220', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT221', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT222', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP002', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT223', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP001', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT224', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP001', 'LOA002', 1,N'Chưa thuê', 'Good'),
+('MT225', 'P002', 'OC002', 'RAM002', 'CHIP002', 'MH002','CMH002', 'CH002', 'BP001', 'LOA002', 1,N'Chưa thuê', 'Good');
+
+
+INSERT INTO tblMAYTINH VALUES
+('MT301', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT302', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT303', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT304', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT305', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT306', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT307', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT308', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT309', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT310', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT311', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT312', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT313', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT314', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT315', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT316', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT317', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT318', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT319', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT320', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT321', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT322', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT323', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT324', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good'),
+('MT325', 'P003', 'OC003', 'RAM003', 'CHIP003', 'MH003', 'CMH003', 'CH003', 'BP003', 'LOA003', 1,N'Chưa thuê', 'Good');
+
+GO
+
+CREATE TABLE tblNHANVIEN(
+	MaNV CHAR(10) PRIMARY KEY,
+	TenNV NVARCHAR(50) NOT NULL,
+	NamSinh INT NOT NULL,
+	GioiTinh NVARCHAR(10) NOT NULL,
+	DiaChi NVARCHAR(100) NOT NULL,
+	DienThoai VARCHAR(12) NOT NULL
+)
+GO
+
+INSERT INTO tblNHANVIEN VALUES
+('NV001', N'Nguyễn Thu Huyền', '1999', N'Nữ', N'885 Tam Trinh, Hoàng Mai, HN', '0978647583'),
+('NV002', N'Ngô Hồng Ngọc', '2000', N'Nữ', N'55 Xuân Canh, Đông Anh, HN', '0938667585'),
+('NV003', N'Nguyễn Thị Thanh', '2001', N'Nữ', N'143 Trần Phú, Hà Đông, HN', '0978647583')
+GO
+SELECT * FROM tblTHUEMAY
+CREATE TABLE tblTHUEMAY(
+MaTM INT PRIMARY KEY IDENTITY (1,1),
+MaPhong VARCHAR(10)  NOT NULL,
+MaMay VARCHAR(10) NOT NULL,
+TenKhach NVARCHAR(50) NOT NULL,
+NgayThue DATE NOT NULL,
+GioVao DATETIME NOT NULL,
+GioRa DATETIME NOT NULL,
+MaNV CHAR(10) NOT NULL,
+GhiChu NVARCHAR(200),
+FOREIGN KEY (MaPhong) REFERENCES tblPHONG(MaPhong),
+FOREIGN KEY (MaMay) REFERENCES tblMAYTINH(MaMay),
+FOREIGN KEY (MaNV) REFERENCES tblNHANVIEN(MaNV) )
+GO
+
+SELECT * FROM tblTHUEMAY
+INSERT INTO tblNHABAOTRI VALUES
+('NBT001', 'Laptop88', N'125 Trần Đại Nghĩa, Hai Bà Trưng, HN', '0247106999'),
+('NBT002', N'Bệnh Viện Laptop', N'131 Thái Hà, Đống Đa, HN', '0904636556'),
+('NBT003', N'Sửa Chữa Laptop 24h', N'128 Lê Thanh Nghị, Bách Khoa, HN', '0915468866'),
+('NBT004', 'Laptop AS', N'114 Lê Thanh Nghị, Bách Khoa, HN', '0904636556'),
+('NBT005', N'Bệnh Viện Công Nghệ 88', N'71A Lê Thanh Nghị, Bách Khoa, Hà Nội', '0246294041')
+GO
+SELECT * FROM tblBAOTRI
+CREATE TABLE tblBAOTRI(
+	MaBaoTri CHAR(10) PRIMARY KEY,
+	MaNBT CHAR(10) NOT NULL,
+	MaMay CHAR(10) NOT NULL,
+	NguyenNhan NVARCHAR(100) NOT NULL,
+	GiaiPhap NVARCHAR(100) NOT NULL,
+	ThanhTien MONEY NOT NULL,
+	NgayBT DATE NOT NULL
+)
+GO
+
+INSERT INTO tblBAOTRI VALUES
+('BT001', 'NBT002', 'MT116', N'Cháy RAM', N'Thay RAM mới', 1600000, '12/05/2023')
+INSERT INTO TBLBAOTRI VALUES
+('BT002', 'NBT001', 'MT203', N'Lỗi ổ cứng', N'Thay ổ cứng mới', 2000000, '11/11/2023')
+INSERT INTO TBLBAOTRI VALUES
+('BT003', 'NBT005', 'MT221', N'Bàn phím dính ẩm', N'Vệ sinh bàn phím', 150000, '12/06/2023'),
+('BT004', 'NBT001', 'MT321', N'Thiếu dung lượng bộ nhớ', N'Nâng cấp bộ nhớ', 1000000, '01/11/2024'),
+('BT005', 'NBT003', 'MT122', N'Hỏng Main', N'Thay main mới', 2500000, '02/21/2024'),
+('BT006', 'NBT004', 'MT104', N'Lỗi hệ thống', N'Cài lại win', 100000, '03/06/2024'),
+('BT007', 'NBT003', 'MT121', N'Máy quá nóng', N'Thay quạt tản nhiệt', 180000, '04/30/2024')
+GO
+
+
+
+CREATE TABLE tblDANHMUCTHUCPHAM(
+	MaDMTP char(10) PRIMARY KEY NOT NULL,
+	TenDMTP nvarchar(50) NOT NULL,
+	MoTa nvarchar(200) NOT NULL
+)
+
+INSERT INTO tblDANHMUCTHUCPHAM VALUES
+('DMTP001',N'GẠO', N'Co nhieu loai gao gom te, nep cai hoa vang, ST25…'),
+('DMTP002',N'THỊT', N'Co nhieu loai thit gom ga, bo, lon, trau…'),
+('DMTP003',N'TRỨNG', N'Co nhieu loai trung gom vit, ga, ngong…'),
+('DMTP004',N'SỮA', N'Co nhieu loai sua gom sua tiet trung, milo, vinamilk…'),
+('DMTP005',N'BÁNH', N'Co nhieu loai banh gom banh quy, banh nep, banh ngot…'),
+('DMTP006',N'KẸO', N'Co nhieu loai keo gom keo deo, keo socola, keo hoa qua…'),
+('DMTP007',N'NƯỚC',N'Co nhieu loai nuoc gom nuoc ga, nuoc ngot, nuoc khoang…'),
+('DMTP008',N'RAU', N'Co nhieu loai rau gom rau song, rau muong, rau mong toi…');
+
+
+CREATE TABLE tblTHUCPHAM(
+	MaTP nchar(10) PRIMARY KEY NOT NULL,
+	TenTP nvarchar(50) NOT NULL,
+	Soluong int NOT NULL,
+	MaDMTP char(10) NOT NULL,
+ 	FOREIGN KEY (MaDMTP) REFERENCES tblDANHMUCTHUCPHAM (MaDMTP)
+)
+
+INSERT INTO tblTHUCPHAM VALUES
+('TP001',N'Thịt gà', 50, 'DMTP002'),
+('TP002', N'Thịt bò', 40, 'DMTP002'),
+('TP003', N'Thịt lợn', 30, 'DMTP002'),
+('TP004', N'Trứng vịt', 60, 'DMTP003'),
+('TP005', N'Trứng gà', 70, 'DMTP003'),
+('TP006', N'Gạo te', 80, 'DMTP001'),
+('TP007', N'Gạo nep cai hoa vang', 90, 'DMTP001'),
+('TP008',N'Gạo ST25', 100, 'DMTP001'),
+('TP009',N'Sữa tiệt trùng', 110, 'DMTP004'),
+('TP010', N'Sữa milo', 120, 'DMTP004'),
+('TP011',N'Sữa Vinamilk', 130, 'DMTP004'),
+('TP012', N'Bánh quy', 140, 'DMTP005'),
+('TP013', N'Bánh nếp', 150, 'DMTP005'),
+('TP014', N'Bánh ngọt', 160, 'DMTP005'),
+('TP015', N'Kẹo dẻo', 170, 'DMTP006'),
+('TP016',N'Kẹo sô cô la', 180, 'DMTP006'),
+('TP017',N'Kẹo hoa quả', 190, 'DMTP006'),
+('TP018',N'Nước ngọt', 200, 'DMTP007'),
+('TP019', N'Nước khoáng', 210, 'DMTP007'),
+('TP020',N'Rau sống', 220, 'DMTP008'),
+('TP021',N'Rau muống', 230, 'DMTP008'),
+('TP022',N'Rau mồng tơi', 240, 'DMTP008'),
+('TP023',N'Thịt trâu', 50, 'DMTP002'),
+('TP024',N'Thịt cá', 40, 'DMTP002'),
+('TP025',N'Thịt heo', 30, 'DMTP002'),
+('TP026',N'Trứng vịt lộn', 60, 'DMTP003'),
+('TP027',N'Trứng cút', 70, 'DMTP003'),
+('TP028', N'Gạo lứt', 80, 'DMTP001'),
+('TP029', N'Gạo nếp', 90, 'DMTP001'),
+('TP030', N'Gạo lúa mạch', 100, 'DMTP001');
+
+go
+SELECT * FROM tblDANHMUCTHUCPHAM
+SELECT * FROM tblDICHVU
+SELECT * FROM tblTHUCPHAM
+SELECT * FROM tblTHUEMAY
+CREATE TABLE tblDICHVU(
+	MaTM INT,
+	Soluong int NOT NULL,
+	Dongia float NOT NULL,
+	MaTP NCHAR(10),
+	FOREIGN KEY (MaTP) REFERENCES tblTHUCPHAM (MaTP), 
+	FOREIGN KEY (MaTM) REFERENCES tblTHUEMAY (MaTM),
+	CONSTRAINT PK_DICHVU PRIMARY KEY (MaTM, MaTP)
+)
+
+CREATE TABLE tblPHIEUNHAPHANG(
+	MaPN char(10) PRIMARY KEY NOT NULL,
+	Soluong int NOT NULL,
+	Dongianhap float NOT NULL,
+	Ngaynhap datetime NOT NULL,
+	MaTP NCHAR(10),
+ 	FOREIGN KEY (MaTP) REFERENCES tblTHUCPHAM (MaTP)
+)
+
+CREATE TABLE tblTRALUONG(
+	MaLuong nchar(10) PRIMARY KEY NOT NULL,
+	MaNV char(10),
+	TienLuong money NOT NULL,
+	NgayTraLuong datetime NOT NULL,
+ 	FOREIGN KEY (MaNV) REFERENCES tblNHANVIEN (MaNV)
+)
