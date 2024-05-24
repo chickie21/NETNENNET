@@ -290,6 +290,8 @@ INSERT INTO tblNHABAOTRI VALUES
 ('NBT004', 'Laptop AS', N'114 Lê Thanh Nghị, Bách Khoa, HN', '0904636556'),
 ('NBT005', N'Bệnh Viện Công Nghệ 88', N'71A Lê Thanh Nghị, Bách Khoa, Hà Nội', '0246294041')
 GO
+SELECT * FROM tblNHABAOTRI;
+
 SELECT * FROM tblBAOTRI
 CREATE TABLE tblBAOTRI(
 	MaBaoTri CHAR(10) PRIMARY KEY,

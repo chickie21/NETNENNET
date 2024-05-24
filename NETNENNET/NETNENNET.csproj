@@ -47,6 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Function.cs" />
+    <Compile Include="frmBAOTRI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBAOTRI.Designer.cs">
+      <DependentUpon>frmBAOTRI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNHANVIEN.Designer.cs">
+      <DependentUpon>frmNHANVIEN.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTHUEDICHVU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +73,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBAOTRI.resx">
+      <DependentUpon>frmBAOTRI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNHANVIEN.resx">
+      <DependentUpon>frmNHANVIEN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTHUEDICHVU.resx">
       <DependentUpon>frmTHUEDICHVU.cs</DependentUpon>
     </EmbeddedResource>
