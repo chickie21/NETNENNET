@@ -1,0 +1,95 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|c:\\users\\ngoho\\source\\repos\\netnennet\\netnennet\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|c:\\users\\ngoho\\source\\repos\\netnennet\\netnennet\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|c:\\users\\ngoho\\source\\repos\\netnennet\\netnennet\\class\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\class\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|c:\\users\\ngoho\\source\\repos\\netnennet\\netnennet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\Program.cs",
+              "RelativeDocumentMoniker": "NETNENNET\\Program.cs",
+              "ToolTip": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\Program.cs",
+              "RelativeToolTip": "NETNENNET\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T15:31:20.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Function.cs",
+              "DocumentMoniker": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\Class\\Function.cs",
+              "RelativeDocumentMoniker": "NETNENNET\\Class\\Function.cs",
+              "ToolTip": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\Class\\Function.cs",
+              "RelativeToolTip": "NETNENNET\\Class\\Function.cs",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAgwHkAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T15:24:29.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmNHANVIEN.cs",
+              "DocumentMoniker": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\frmNHANVIEN.cs",
+              "RelativeDocumentMoniker": "NETNENNET\\frmNHANVIEN.cs",
+              "ToolTip": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\frmNHANVIEN.cs*",
+              "RelativeToolTip": "NETNENNET\\frmNHANVIEN.cs*",
+              "ViewState": "AQIAAPIAAAAAAAAAAAAewAEBAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T15:18:22.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmNHANVIEN.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\frmNHANVIEN.cs",
+              "RelativeDocumentMoniker": "NETNENNET\\frmNHANVIEN.cs",
+              "ToolTip": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\frmNHANVIEN.cs [Design]*",
+              "RelativeToolTip": "NETNENNET\\frmNHANVIEN.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T15:18:15.438Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

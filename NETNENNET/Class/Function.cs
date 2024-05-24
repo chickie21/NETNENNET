@@ -18,7 +18,7 @@ namespace NETNENNET.Class
          
         public static void Connect()
         {
-            connString = "Data Source=CHICKIE;Initial Catalog = NETNENNET; Integrated Security = True; Encrypt=False";
+            connString = "Data Source=DESKTOP-LQ9NHMT;Initial Catalog=NETNENNET;Integrated Security=True;Encrypt=False";
             Connection = new SqlConnection();
             Connection.ConnectionString = connString;
             Connection.Open();
@@ -98,6 +98,32 @@ namespace NETNENNET.Class
             cmd.Dispose();
             cmd = null;
         }
+        //public static bool IsDate(string d)
+        //{
+        //    string[] parts = d.Split('/');
+        //    if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) &&
+        //        (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
+        //        return true;
+        //    else
+        //        return false;
+        //}
+        //public static string ConvertDateTime(string d)
+        //{
+        //    string[] parts = d.Split('/');
+        //    string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+        //    return dt;
+        //}
+        public static bool CheckKey(string sql)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Function.Connection);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
     }
 }//duoc roi, viet duoc datatable roi do
 
