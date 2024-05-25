@@ -60,6 +60,20 @@ namespace NETNENNET.Class
             return ma;
 
         }
+        public static string GetFieldValues1(string sql)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, Function.Connection);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            return ma;
+
+        }
 
         public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
         {
@@ -98,21 +112,21 @@ namespace NETNENNET.Class
             cmd.Dispose();
             cmd = null;
         }
-        //public static bool IsDate(string d)
-        //{
-        //    string[] parts = d.Split('/');
-        //    if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) &&
-        //        (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
-        //        return true;
-        //    else
-        //        return false;
-        //}
-        //public static string ConvertDateTime(string d)
-        //{
-        //    string[] parts = d.Split('/');
-        //    string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
-        //    return dt;
-        //}
+        public static bool IsDate(string d)
+        {
+            string[] parts = d.Split('/');
+            if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) &&
+                (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
+                return true;
+            else
+                return false;
+        }
+        public static string ConvertDateTime(string d)
+        {
+            string[] parts = d.Split('/');
+            string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
+        }
         public static bool CheckKey(string sql)
         {
             SqlDataAdapter Mydata = new SqlDataAdapter(sql, Function.Connection);

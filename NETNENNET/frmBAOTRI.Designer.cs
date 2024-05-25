@@ -90,6 +90,7 @@
             this.btnDong.TabIndex = 33;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnBoqua
             // 
@@ -99,6 +100,7 @@
             this.btnBoqua.TabIndex = 32;
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.UseVisualStyleBackColor = true;
+            this.btnBoqua.Click += new System.EventHandler(this.btnBoqua_Click);
             // 
             // btnLuu
             // 
@@ -108,6 +110,7 @@
             this.btnLuu.TabIndex = 31;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -117,6 +120,7 @@
             this.btnXoa.TabIndex = 30;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -126,6 +130,7 @@
             this.btnSua.TabIndex = 29;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -135,6 +140,7 @@
             this.btnThem.TabIndex = 28;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvBaoTri
             // 
@@ -145,6 +151,7 @@
             this.dgvBaoTri.RowTemplate.Height = 24;
             this.dgvBaoTri.Size = new System.Drawing.Size(837, 214);
             this.dgvBaoTri.TabIndex = 27;
+            this.dgvBaoTri.Click += new System.EventHandler(this.dgvBaoTri_Click);
             // 
             // label7
             // 
@@ -282,6 +289,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmBAOTRI";
             this.Text = "frmBAOTRI";
+            this.Load += new System.EventHandler(this.frmBAOTRI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoTri)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
