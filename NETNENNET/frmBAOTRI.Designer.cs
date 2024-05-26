@@ -60,6 +60,7 @@
             this.txtThanhtien.Name = "txtThanhtien";
             this.txtThanhtien.Size = new System.Drawing.Size(413, 22);
             this.txtThanhtien.TabIndex = 39;
+            this.txtThanhtien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThanhtien_KeyPress);
             // 
             // txtNguyennhan
             // 

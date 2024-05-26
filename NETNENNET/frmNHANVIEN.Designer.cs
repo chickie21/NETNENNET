@@ -206,6 +206,7 @@
             this.txtGioitinh.Name = "txtGioitinh";
             this.txtGioitinh.Size = new System.Drawing.Size(413, 22);
             this.txtGioitinh.TabIndex = 16;
+            this.txtGioitinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGioitinh_KeyPress);
             // 
             // txtNamsinh
             // 
@@ -213,6 +214,7 @@
             this.txtNamsinh.Name = "txtNamsinh";
             this.txtNamsinh.Size = new System.Drawing.Size(413, 22);
             this.txtNamsinh.TabIndex = 17;
+            this.txtNamsinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamsinh_KeyPress);
             // 
             // txtTennhanvien
             // 
@@ -220,6 +222,7 @@
             this.txtTennhanvien.Name = "txtTennhanvien";
             this.txtTennhanvien.Size = new System.Drawing.Size(413, 22);
             this.txtTennhanvien.TabIndex = 18;
+            this.txtTennhanvien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTennhanvien_KeyPress);
             // 
             // txtDienthoai
             // 
@@ -227,6 +230,7 @@
             this.txtDienthoai.Name = "txtDienthoai";
             this.txtDienthoai.Size = new System.Drawing.Size(413, 22);
             this.txtDienthoai.TabIndex = 19;
+            this.txtDienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienthoai_KeyPress);
             // 
             // frmNHANVIEN
             // 

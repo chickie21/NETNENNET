@@ -257,5 +257,41 @@ namespace NETNENNET
         {
             this.Close();
         }
+
+        private void txtNamsinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (e.KeyChar == '-') ||
+                (e.KeyChar == '.') || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtDienthoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (e.KeyChar == '-') ||
+                (e.KeyChar == '.') || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtTennhanvien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (e.KeyChar == '-') ||
+               (e.KeyChar == '.'))
+                e.Handled = true;
+            else
+                e.Handled = false;
+        }
+
+        private void txtGioitinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (e.KeyChar == '-') ||
+               (e.KeyChar == '.'))
+                e.Handled = true;
+            else
+                e.Handled = false;
+        }
     }
 }
