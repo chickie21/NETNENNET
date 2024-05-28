@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NETNENNET
 {
-    public partial class frmDMThucpham : Form
+    public partial class QUANLYPHONG : Form
     {
-        public frmDMThucpham()
+        public QUANLYPHONG()
         {
             InitializeComponent();
         }
