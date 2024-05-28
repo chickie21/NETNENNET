@@ -75,6 +75,7 @@ namespace NETNENNET.Class
 
         }
 
+
         public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
         {
             SqlDataAdapter Mydata = new SqlDataAdapter(sql, Function.Connection);
@@ -137,6 +138,23 @@ namespace NETNENNET.Class
             else
                 return false;
         }
+        public static void RunSqlDel(string sql)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Function.Connection;
+            cmd.CommandText = sql;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("Dữ liệu đang được dùng, không thể xóa...", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            cmd.Dispose();
+            cmd = null;
+        }
+
 
     }
 }//duoc roi, viet duoc datatable roi do

@@ -22,3 +22,4 @@ C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.Gener
 C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.CoreCompileInputs.cache
 C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.exe
 C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.pdb
+C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmQUANLYMAY.resources
