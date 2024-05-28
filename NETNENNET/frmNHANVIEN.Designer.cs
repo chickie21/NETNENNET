@@ -48,6 +48,8 @@
             this.txtNamsinh = new System.Windows.Forms.TextBox();
             this.txtTennhanvien = new System.Windows.Forms.TextBox();
             this.txtDienthoai = new System.Windows.Forms.TextBox();
+            this.btnTimkiem = new System.Windows.Forms.Button();
+            this.btnHienthi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +130,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(94, 542);
+            this.btnThem.Location = new System.Drawing.Point(37, 539);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(91, 34);
             this.btnThem.TabIndex = 8;
@@ -138,7 +140,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(236, 542);
+            this.btnSua.Location = new System.Drawing.Point(179, 539);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 34);
             this.btnSua.TabIndex = 9;
@@ -148,7 +150,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(403, 542);
+            this.btnXoa.Location = new System.Drawing.Point(346, 539);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 34);
             this.btnXoa.TabIndex = 10;
@@ -158,7 +160,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(557, 542);
+            this.btnLuu.Location = new System.Drawing.Point(500, 539);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 34);
             this.btnLuu.TabIndex = 11;
@@ -168,7 +170,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(699, 542);
+            this.btnBoqua.Location = new System.Drawing.Point(642, 539);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(91, 34);
             this.btnBoqua.TabIndex = 12;
@@ -178,7 +180,7 @@
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(840, 542);
+            this.btnDong.Location = new System.Drawing.Point(783, 539);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(91, 34);
             this.btnDong.TabIndex = 13;
@@ -232,11 +234,33 @@
             this.txtDienthoai.TabIndex = 19;
             this.txtDienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienthoai_KeyPress);
             // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Location = new System.Drawing.Point(909, 539);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Size = new System.Drawing.Size(103, 35);
+            this.btnTimkiem.TabIndex = 52;
+            this.btnTimkiem.Text = "Tìm kiếm";
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
+            // btnHienthi
+            // 
+            this.btnHienthi.Location = new System.Drawing.Point(937, 387);
+            this.btnHienthi.Name = "btnHienthi";
+            this.btnHienthi.Size = new System.Drawing.Size(103, 35);
+            this.btnHienthi.TabIndex = 53;
+            this.btnHienthi.Text = "Hiển thị DS";
+            this.btnHienthi.UseVisualStyleBackColor = true;
+            this.btnHienthi.Click += new System.EventHandler(this.btnHienthi_Click);
+            // 
             // frmNHANVIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 597);
+            this.ClientSize = new System.Drawing.Size(1099, 597);
+            this.Controls.Add(this.btnHienthi);
+            this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.txtDienthoai);
             this.Controls.Add(this.txtTennhanvien);
             this.Controls.Add(this.txtNamsinh);
@@ -288,5 +312,7 @@
         private System.Windows.Forms.TextBox txtNamsinh;
         private System.Windows.Forms.TextBox txtTennhanvien;
         private System.Windows.Forms.TextBox txtDienthoai;
+        private System.Windows.Forms.Button btnTimkiem;
+        private System.Windows.Forms.Button btnHienthi;
     }
 }

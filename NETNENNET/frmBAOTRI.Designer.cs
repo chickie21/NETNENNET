@@ -51,6 +51,8 @@
             this.cboMaNBT = new System.Windows.Forms.ComboBox();
             this.cboMamay = new System.Windows.Forms.ComboBox();
             this.mskNgayBT = new System.Windows.Forms.MaskedTextBox();
+            this.btnTimkiem = new System.Windows.Forms.Button();
+            this.btnHienthi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoTri)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +87,7 @@
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(890, 620);
+            this.btnDong.Location = new System.Drawing.Point(819, 622);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(91, 34);
             this.btnDong.TabIndex = 33;
@@ -95,7 +97,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(749, 620);
+            this.btnBoqua.Location = new System.Drawing.Point(678, 622);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(91, 34);
             this.btnBoqua.TabIndex = 32;
@@ -105,7 +107,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(607, 620);
+            this.btnLuu.Location = new System.Drawing.Point(536, 622);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 34);
             this.btnLuu.TabIndex = 31;
@@ -115,7 +117,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(453, 620);
+            this.btnXoa.Location = new System.Drawing.Point(382, 622);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 34);
             this.btnXoa.TabIndex = 30;
@@ -125,7 +127,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(286, 620);
+            this.btnSua.Location = new System.Drawing.Point(215, 622);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 34);
             this.btnSua.TabIndex = 29;
@@ -135,7 +137,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(144, 620);
+            this.btnThem.Location = new System.Drawing.Point(73, 622);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(91, 34);
             this.btnThem.TabIndex = 28;
@@ -260,11 +262,33 @@
             this.mskNgayBT.TabIndex = 45;
             this.mskNgayBT.ValidatingType = typeof(System.DateTime);
             // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Location = new System.Drawing.Point(953, 621);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Size = new System.Drawing.Size(103, 35);
+            this.btnTimkiem.TabIndex = 52;
+            this.btnTimkiem.Text = "Tìm kiếm";
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
+            // btnHienthi
+            // 
+            this.btnHienthi.Location = new System.Drawing.Point(987, 467);
+            this.btnHienthi.Name = "btnHienthi";
+            this.btnHienthi.Size = new System.Drawing.Size(103, 35);
+            this.btnHienthi.TabIndex = 53;
+            this.btnHienthi.Text = "Hiển thị DS";
+            this.btnHienthi.UseVisualStyleBackColor = true;
+            this.btnHienthi.Click += new System.EventHandler(this.btnHienthi_Click);
+            // 
             // frmBAOTRI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 668);
+            this.Controls.Add(this.btnHienthi);
+            this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.mskNgayBT);
             this.Controls.Add(this.cboMamay);
             this.Controls.Add(this.cboMaNBT);
@@ -322,5 +346,7 @@
         private System.Windows.Forms.ComboBox cboMaNBT;
         private System.Windows.Forms.ComboBox cboMamay;
         private System.Windows.Forms.MaskedTextBox mskNgayBT;
+        private System.Windows.Forms.Button btnTimkiem;
+        private System.Windows.Forms.Button btnHienthi;
     }
 }

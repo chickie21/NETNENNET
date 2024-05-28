@@ -40,7 +40,7 @@ namespace NETNENNET
             cboMamay.Text = "";
             txtNguyennhan.Text = "";
             txtGiaiphap.Text = "";
-            txtThanhtien.Text = "0";
+            txtThanhtien.Text = "";
             mskNgayBT.Text = "  /  /";
         }
 
@@ -273,6 +273,49 @@ namespace NETNENNET
                 e.Handled = false;
             else
                 e.Handled = true;
+        }
+
+        private void btnTimkiem_Click(object sender, EventArgs e)
+        {
+            txtMabaotri.Enabled = true;
+            string sql;
+            if ((txtMabaotri.Text == "") && (cboMaNBT.Text == "") && (cboMamay.Text == "") && (txtNguyennhan.Text == "") && (txtGiaiphap.Text == "") && (txtThanhtien.Text == "") && (mskNgayBT.Text == "  /  /"))
+            {
+                MessageBox.Show("Hãy nhập một điều kiện tìm kiếm!!!", "Yêu cầu ...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            sql = "SELECT * FROM tblbaotri WHERE 1=1";
+            if (txtMabaotri.Text != "")
+                sql = sql + " AND mabaotri Like N'%" + txtMabaotri.Text + "%'";
+            if (cboMaNBT.Text != "")
+                sql = sql + " AND manbt Like N'%" + cboMaNBT.SelectedValue + "%'";
+            if (cboMamay.Text != "")
+                sql = sql + " AND mamay Like N'%" + cboMamay.SelectedValue + "%'";
+            if (txtNguyennhan.Text != "")
+                sql = sql + " AND nguyennhan Like N'%" + txtNguyennhan.Text + "%'";
+            if (txtGiaiphap.Text != "")
+                sql = sql + " AND giaiphap Like N'%" + txtGiaiphap.Text + "%'";
+            if (txtThanhtien.Text != "")
+                sql = sql + " AND thanhtien Like N'%" + txtThanhtien.Text + "%'";
+            if (mskNgayBT.Text != "  /  /")
+                sql = sql + " AND ngayBT Like N'%" + mskNgayBT.Text + "%'";
+
+            tblbt = Function.GetDataToTable(sql);
+            if (tblbt.Rows.Count == 0)
+                MessageBox.Show("Không có bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                MessageBox.Show("Có " + tblbt.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            dgvBaoTri.DataSource = tblbt;
+            ResetValues();
+        }
+
+        private void btnHienthi_Click(object sender, EventArgs e)
+        {
+            string sql;
+            sql = "SELECT * FROM tblbaotri";
+            tblbt = Function.GetDataToTable(sql);
+            dgvBaoTri.DataSource = tblbt;
         }
     }
 }

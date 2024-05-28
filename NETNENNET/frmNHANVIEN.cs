@@ -293,5 +293,46 @@ namespace NETNENNET
             else
                 e.Handled = false;
         }
+
+        private void btnTimkiem_Click(object sender, EventArgs e)
+        {
+            txtManhanvien.Enabled = true;
+            string sql;
+            if ((txtManhanvien.Text == "") && (txtTennhanvien.Text == "") && (txtGioitinh.Text == "") && (txtDiachi.Text == "") && (txtDienthoai.Text == "") && (txtNamsinh.Text == ""))
+            {
+                MessageBox.Show("Hãy nhập một điều kiện tìm kiếm!!!", "Yêu cầu ...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            sql = "SELECT * FROM tblNhanvien WHERE 1=1";
+            if (txtManhanvien.Text != "")
+                sql = sql + " AND maNV Like N'%" + txtManhanvien.Text + "%'";
+            if (txtTennhanvien.Text != "")
+                sql = sql + " AND tennv Like N'%" + txtTennhanvien.Text + "%'";
+            if (txtNamsinh.Text != "")
+                sql = sql + " AND namsinh Like N'%" + txtNamsinh.Text + "%'";
+            if (txtDiachi.Text != "")
+                sql = sql + " AND diachi Like N'%" + txtDiachi.Text + "%'";
+            if (txtDienthoai.Text != "")
+                sql = sql + " AND dienthoai Like N'%" + txtDienthoai.Text + "%'";
+            if (txtGioitinh.Text != "")
+                sql = sql + " AND gioitinh Like N'%" + txtGioitinh.Text + "%'";
+
+            tblNV = Function.GetDataToTable(sql);
+            if (tblNV.Rows.Count == 0)
+                MessageBox.Show("Không có bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                MessageBox.Show("Có " + tblNV.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            dgvNhanVien.DataSource = tblNV;
+            ResetValues();
+        }
+
+        private void btnHienthi_Click(object sender, EventArgs e)
+        {
+            string sql;
+            sql = "SELECT * FROM tblnhanvien";
+            tblNV = Function.GetDataToTable(sql);
+            dgvNhanVien.DataSource = tblNV;
+        }
     }
 }

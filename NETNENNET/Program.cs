@@ -16,7 +16,7 @@ namespace NETNENNET
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQUANLYMAY());
+            Application.Run(new frmNHANVIEN());
         }
     }
 }
