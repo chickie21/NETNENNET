@@ -410,3 +410,13 @@ CREATE TABLE tblTRALUONG(
  	FOREIGN KEY (MaNV) REFERENCES tblNHANVIEN (MaNV)
 )
 
+select * from tblTHUEMAY
+select * from tblDICHVU
+select * from tblTHUCPHAM
+
+SELECT tblTHUEMAY.MaTM, tblTHUEMAY.MaPhong, tblTHUEMAY.MaMay, tblTHUEMAY.TenKhach, tblTHUEMAY.GioVao, tblTHUEMAY.GioRa,tblDICHVU.MaTP, tblDICHVU.Soluong, tblDICHVU.Dongia, tblTHUEMAY.MaNV FROM tblTHUEMAY
+LEFT JOIN tblDICHVU
+ON tblTHUEMAY.MaTM = tblDICHVU.MaTM
+-- day ah, số lượng là số lượng gì thế bạn, số lượng của cái thực phẩm. Ok đã hiểu
+
+SELECT MaTP, Soluong, Dongia FROM tblDICHVU WHERE MaTM = 27
