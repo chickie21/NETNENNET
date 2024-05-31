@@ -397,6 +397,8 @@ namespace NETNENNET
             {
                 sql = "DELETE tblMaytinh WHERE Mamay=N'" + txtMamay.Text + "'";
                 Function.RunSqlDel(sql);
+                sql = "update tblphong set somay=somay-1 where maphong=N'" + cboMaphong.SelectedValue.ToString() + "'";
+                Function.RunSQL(sql);
                 Load_DataGridView();
                 ResetValues();
             }
