@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|c:\\users\\ngoho\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\netnennet\\netnennet\\quanlyphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\quanlyphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\netnennet\\class\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|c:\\users\\ngoho\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\netnennet\\netnennet\\class\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\class\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\netnennet\\quanlyphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\quanlyphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\netnennet\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +26,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Function.cs",
               "DocumentMoniker": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\NETNENNET\\Class\\Function.cs",
               "RelativeDocumentMoniker": "NETNENNET\\Class\\Function.cs",
@@ -46,43 +34,8 @@
               "RelativeToolTip": "NETNENNET\\Class\\Function.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAGwAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T16:51:36.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "QUANLYPHONG.cs",
-              "DocumentMoniker": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\NETNENNET\\QUANLYPHONG.cs",
-              "RelativeDocumentMoniker": "NETNENNET\\QUANLYPHONG.cs",
-              "ToolTip": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\NETNENNET\\QUANLYPHONG.cs",
-              "RelativeToolTip": "NETNENNET\\QUANLYPHONG.cs",
-              "ViewState": "AQIAAHoBAAAAAAAAAAAIwJABAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T16:22:42.299Z",
+              "WhenOpened": "2024-05-31T16:51:36.895Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "QUANLYPHONG.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\NETNENNET\\QUANLYPHONG.cs",
-              "RelativeDocumentMoniker": "NETNENNET\\QUANLYPHONG.cs",
-              "ToolTip": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\NETNENNET\\QUANLYPHONG.cs [Design]*",
-              "RelativeToolTip": "NETNENNET\\QUANLYPHONG.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T16:22:38.801Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmNHANVIEN.cs",
-              "DocumentMoniker": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\NETNENNET\\frmNHANVIEN.cs",
-              "RelativeDocumentMoniker": "NETNENNET\\frmNHANVIEN.cs",
-              "ToolTip": "C:\\Users\\ngoho\\source\\repos\\NETNENNET\\NETNENNET\\frmNHANVIEN.cs*",
-              "RelativeToolTip": "..\\..\\..\\..\\source\\repos\\NETNENNET\\NETNENNET\\frmNHANVIEN.cs*",
-              "ViewState": "AQIAADwBAAAAAAAAAAD4v04BAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T16:45:23.233Z"
             }
           ]
         }
