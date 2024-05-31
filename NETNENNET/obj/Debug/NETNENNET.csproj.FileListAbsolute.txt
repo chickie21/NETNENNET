@@ -23,3 +23,17 @@ C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.CoreC
 C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.exe
 C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.pdb
 C:\Users\ngoho\source\repos\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmQUANLYMAY.resources
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\bin\Debug\NETNENNET.exe.config
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\bin\Debug\NETNENNET.exe
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\bin\Debug\NETNENNET.pdb
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.AssemblyReference.cache
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmBAOTRI.resources
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmNHANVIEN.resources
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmTHUEDICHVU.resources
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.Home.resources
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.Properties.Resources.resources
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.frmQUANLYMAY.resources
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.GenerateResource.cache
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.csproj.CoreCompileInputs.cache
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.exe
+C:\Users\ngoho\OneDrive\Tài liệu\GitHub\NETNENNET\NETNENNET\obj\Debug\NETNENNET.pdb

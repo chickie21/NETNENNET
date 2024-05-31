@@ -24,7 +24,6 @@ namespace NETNENNET
             Class.Function.Connect();
             btnLuu.Enabled = false;
             btnBoqua.Enabled = false;
-            txtTinhtrang.Text = "0-NotGood, 1-Good";
             Load_DataGridView();
             Function.FillCombo("SELECT Maphong, Tenphong FROM tblphong",cboMaphong, "Maphong", "Tenphong");
             cboMaphong.SelectedIndex = 0;
@@ -242,6 +241,9 @@ namespace NETNENNET
                 txtMamay.Text = "";
                 return;
             }
+            sql = "update tblphong set somay=somay+1 where maphong=N'"+cboMaphong.SelectedValue.ToString()+"'";
+            Function.RunSQL(sql);
+
             sql = "INSERT INTO tblMaytinh(Maphong, mamay, maocung, maram, machip, mamanhinh, macomanhinh, mabanphim, machuot, maloa, tinhtrang, tinhtrangthue, ghichu) VALUES(N'" + cboMaphong.SelectedValue.ToString() +
                     "',N'" + txtMamay.Text.Trim() + "',N'" + cboMaocung.SelectedValue.ToString() + "',N'" + cboMaram.SelectedValue.ToString() +
                       "',N'" + cboMachip.SelectedValue.ToString() + "',N'" + cboMamanhinh.SelectedValue.ToString() +
@@ -418,7 +420,7 @@ namespace NETNENNET
             string sql;
             if ((cboMaphong.Text == "") && (txtMamay.Text == "") && (cboMaocung.Text =="") && (cboMaram.Text == "") && (cboMachip.Text == "") && (cboMamanhinh.Text == "") && (cboComanhinh.Text == "") && (cboMachuot.Text == "") && (cboMabanphim.Text == "") && (cboMaloa.Text == "") && (txtTinhtrang.Text == "") && (txtTrangthai.Text == ""))
             {
-                MessageBox.Show("Hãy nhập một điều kiện tìm kiếm!!!", "Yêu cầu ...",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Hãy nhập/chọn một điều kiện tìm kiếm!!!", "Yêu cầu ...",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             sql = "SELECT * FROM tblmaytinh WHERE 1=1";

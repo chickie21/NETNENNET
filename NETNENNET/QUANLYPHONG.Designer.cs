@@ -64,6 +64,8 @@
             this.cboComanhinh = new System.Windows.Forms.ComboBox();
             this.txtTrangthai = new System.Windows.Forms.TextBox();
             this.txtGhichu = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanlymay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,7 +277,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(944, 130);
+            this.label12.Location = new System.Drawing.Point(944, 142);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 16);
             this.label12.TabIndex = 64;
@@ -374,7 +376,7 @@
             // 
             // txtTrangthai
             // 
-            this.txtTrangthai.Location = new System.Drawing.Point(1071, 124);
+            this.txtTrangthai.Location = new System.Drawing.Point(1071, 136);
             this.txtTrangthai.Name = "txtTrangthai";
             this.txtTrangthai.Size = new System.Drawing.Size(149, 22);
             this.txtTrangthai.TabIndex = 79;
@@ -387,11 +389,35 @@
             this.txtGhichu.Size = new System.Drawing.Size(149, 22);
             this.txtGhichu.TabIndex = 80;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label15.Location = new System.Drawing.Point(1078, 106);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(125, 16);
+            this.label15.TabIndex = 81;
+            this.label15.Text = "0-Not good, 1-Good";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label16.Location = new System.Drawing.Point(1078, 161);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(130, 16);
+            this.label16.TabIndex = 82;
+            this.label16.Text = "Đang thuê/Chưa thuê";
+            // 
             // frmQUANLYMAY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1409, 649);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.txtGhichu);
             this.Controls.Add(this.txtTrangthai);
             this.Controls.Add(this.cboComanhinh);
@@ -475,5 +501,7 @@
         private System.Windows.Forms.ComboBox cboComanhinh;
         private System.Windows.Forms.TextBox txtTrangthai;
         private System.Windows.Forms.TextBox txtGhichu;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }
