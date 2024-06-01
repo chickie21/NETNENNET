@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\netnennet\\quanlyphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|c:\\users\\ngoho\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\netnennet\\netnennet\\quanlyphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\quanlyphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|c:\\users\\ngoho\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\netnennet\\netnennet\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\netnennet\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5A09C7E6-8AF3-467E-BD08-ADC176173C30}|NETNENNET\\NETNENNET.csproj|solutionrelative:netnennet\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -45,8 +45,7 @@
               "ToolTip": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\NETNENNET\\Home.cs [Design]",
               "RelativeToolTip": "NETNENNET\\Home.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T17:28:31.729Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-31T17:28:31.729Z"
             },
             {
               "$type": "Document",
@@ -70,8 +69,7 @@
               "ToolTip": "C:\\Users\\ngoho\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\NETNENNET\\NETNENNET\\QUANLYPHONG.cs [Design]",
               "RelativeToolTip": "NETNENNET\\QUANLYPHONG.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T17:23:40.789Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-31T17:23:40.789Z"
             },
             {
               "$type": "Document",
