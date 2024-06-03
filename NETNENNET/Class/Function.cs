@@ -43,6 +43,23 @@ namespace NETNENNET.Class
             myData.Fill(table);
             return table;
         }
+
+        public static DataTable GetDataToTableRange(string sql, SqlParameter[] parameters)
+        {
+            SqlDataAdapter myData = new SqlDataAdapter();
+            myData.SelectCommand = new SqlCommand();
+            myData.SelectCommand.Connection = Function.Connection;
+            myData.SelectCommand.CommandText = sql;
+
+            if (parameters != null)
+            {
+                myData.SelectCommand.Parameters.AddRange(parameters);
+            }
+
+            DataTable table = new DataTable();
+            myData.Fill(table);
+            return table;
+        }
         //Ơ lỗi rồi, các máy đang bị dính giờ lẫn nhau, vừa mở cái tắt ngay nhưng vẫn bị dính giờ của lần thuê trc =))
 
         //GetFieldValues

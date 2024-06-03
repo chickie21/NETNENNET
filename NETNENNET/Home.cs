@@ -1,8 +1,10 @@
-﻿using NETNENNET.Class;
+﻿using Microsoft.Office.Interop.Excel;
+using NETNENNET.Class;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using SystemTableData = System.Data.DataTable;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -11,16 +13,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using COMExcel = Microsoft.Office.Interop.Excel;
 
-    // ben ref add outlook thi ben nay add excel lsao duoc. nhin ne, ơ rõ ràng là..., à  nhầm thật :<
+// ben ref add outlook thi ben nay add excel lsao duoc. nhin ne, ơ rõ ràng là..., à  nhầm thật :<
 namespace NETNENNET
 {
 
     public partial class Home : Form
     {
         public string CustomFormat { get; set; }
-        DataTable tblMAYTINH;
-        DataTable tblDICHVU;
-        DataTable HoaDon;
+        SystemTableData tblMAYTINH;
+        SystemTableData tblDICHVU;
+        SystemTableData HoaDon;
 
         public Home()
         {
@@ -104,7 +106,14 @@ cboNhanVien, "MaNV", "TenNV");
             dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.EditMode = DataGridViewEditMode.EditProgrammatically;
 
-
+            string sqlSoLuongTP = "SELECT TenTP, Soluong FROM tblTHUCPHAM";
+            SystemTableData dtSoLuongTP = Class.Function.GetDataToTable(sqlSoLuongTP);
+            dataGridView3.DataSource = dtSoLuongTP;
+            dataGridView3.Columns[0].HeaderText = "Tên thực phẩm";
+            dataGridView3.Columns[1].HeaderText = "Số lượng";
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         public void SetMyCustomFormat()
@@ -220,7 +229,7 @@ cboNhanVien, "MaNV", "TenNV");
 
             double giaThue = (gio * 60 + phut + giay / 60.0) * 10000 / 60.0;
             string sqlDichVu = "SELECT MaTP, Soluong, Dongia FROM tblDICHVU WHERE MaTM = N'" + maTM + "'";
-            DataTable dtDichVu = Class.Function.GetDataToTable(sqlDichVu);
+            SystemTableData dtDichVu = Class.Function.GetDataToTable(sqlDichVu);
 
             double tongTienDichVu = 0;
             foreach (DataRow row in dtDichVu.Rows)
@@ -240,7 +249,7 @@ cboNhanVien, "MaNV", "TenNV");
 
             string sqlUpdateMayTinh = "UPDATE tblMAYTINH SET TinhTrangThue = N'Chưa thuê' WHERE MaMay = N'" + txtMaMay.Text + "'";
             Class.Function.RunSQL(sqlUpdateMayTinh);
-            
+
 
             LoadDataGridView();
             UpdateRowColors();
@@ -305,12 +314,13 @@ cboNhanVien, "MaNV", "TenNV");
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboMaTM.Focus();
                 return;
-            } if (tblDICHVU.Rows.Count == 0)
+            }
+            if (tblDICHVU.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-             maTM = dgvDichVu.CurrentRow.Cells["MaTM"].Value.ToString();
+            maTM = dgvDichVu.CurrentRow.Cells["MaTM"].Value.ToString();
 
             cboMaTM.Text = Function.GetFieldValues("SELECT MaTM FROM tblTHUEMAY WHERE MaTM = N'" + maTM + "'");
 
@@ -318,7 +328,7 @@ cboNhanVien, "MaNV", "TenNV");
             cboMaTP.Text = Function.GetFieldValues("SELECT TenTP FROM tblTHUCPHAM WHERE MaTP = N'" + maTP + "'");
             txtQuantity.Text = dgvDichVu.CurrentRow.Cells["Soluong"].Value.ToString();
             txtPrice.Text = dgvDichVu.CurrentRow.Cells["Dongia"].Value.ToString();
- 
+
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnBoQua.Enabled = true;
@@ -337,9 +347,9 @@ cboNhanVien, "MaNV", "TenNV");
 
         }
 
-        private void ResetValues ()
+        private void ResetValues()
         {
-            cboMaTM.Text="";
+            cboMaTM.Text = "";
             cboMaTP.Text = "";
             txtQuantity.Text = "";
             txtPrice.Text = "";
@@ -353,15 +363,18 @@ cboNhanVien, "MaNV", "TenNV");
                 MessageBox.Show("Bạn chưa chọn máy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboMaTM.Focus();
                 return;
-            } else if (cboMaTP.Text == " ")
+            }
+            else if (cboMaTP.Text == " ")
             {
                 MessageBox.Show("Bạn chưa chọn thực phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboMaTP.Focus();
                 return;
-            } 
+            }
             sqlLuuDichVu = "INSERT INTO tblDICHVU(MaTM, MaTP, Soluong, Dongia) VALUES(N'" +
-cboMaTM.Text + "',N'" + cboMaTP.SelectedValue.ToString() + "',N'" + txtQuantity.Text + "',N'" + txtPrice.Text +"')";
-            Class.Function.RunSQL(sqlLuuDichVu);
+cboMaTM.Text + "',N'" + cboMaTP.SelectedValue.ToString() + "',N'" + txtQuantity.Text + "',N'" + txtPrice.Text + "')";
+            string sqlUpdateTP = "UPDATE tblTHUCPHAM SET Soluong = Soluong - " + txtQuantity.Text + " WHERE MaTP = N'" + cboMaTP.SelectedValue.ToString() + "'";
+            Function.RunSQL(sqlUpdateTP);
+            Function.RunSQL(sqlLuuDichVu);
             LoadDataGridView();
             ResetValues();
             btnXoa.Enabled = true;
@@ -402,7 +415,7 @@ cboMaTM.Text + "',N'" + cboMaTP.SelectedValue.ToString() + "',N'" + txtQuantity.
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo",
 MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-              string sqlXoaDichVu = "DELETE tblDICHVU WHERE MaTM=N'" + cboMaTM.Text + "'";
+                string sqlXoaDichVu = "DELETE tblDICHVU WHERE MaTM=N'" + cboMaTM.Text + "'";
                 Class.Function.RunSQL(sqlXoaDichVu);
                 LoadDataGridView();
                 ResetValues();
@@ -424,8 +437,8 @@ MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
         }
         private void RefreshCboMaTM()
         {
-            string sql = "SELECT MaTM FROM tblTHUEMAY"; 
-            DataTable dtMaTM = Class.Function.GetDataToTable(sql);
+            string sql = "SELECT MaTM FROM tblTHUEMAY";
+            SystemTableData dtMaTM = Class.Function.GetDataToTable(sql);
 
             cboMaTM.DataSource = dtMaTM;
             cboMaTM.DisplayMember = "MaTM";
@@ -459,7 +472,7 @@ ON tblTHUEMAY.MaTM = tblDICHVU.MaTM*/
             txtMaPhongHD.Text = maPhongHD;
             txtMaMayHD.Text = maMayHD;
             txtTenKhachHD.Text = tenKhachHD;
-            txtGioVaoHD.Text = gioVaoHD;    
+            txtGioVaoHD.Text = gioVaoHD;
             txtGioRaHD.Text = gioRaHD;
             DateTime gioVao = Convert.ToDateTime(selectedRow.Cells["GioVao"].Value);
             DateTime gioRa = Convert.ToDateTime(selectedRow.Cells["GioRa"].Value);
@@ -490,7 +503,7 @@ ON tblTHUEMAY.MaTM = tblDICHVU.MaTM*/
             //Tổng tiền bằng chữ
             string soTienBangChu;
             string input = txtTongTienHoaDon.Text.Replace(" VNĐ", "");
-            string numericString = new string(input.Where(char.IsDigit).ToArray()); 
+            string numericString = new string(input.Where(char.IsDigit).ToArray());
             numericString = numericString.Split('.')[0];
             double tongTienHD = Math.Round(thanhTien, 0);
             if (double.TryParse(numericString, out tongTienHD))
@@ -505,7 +518,7 @@ ON tblTHUEMAY.MaTM = tblDICHVU.MaTM*/
 
 
         }
-        
+
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
@@ -526,8 +539,8 @@ ON tblTHUEMAY.MaTM = tblDICHVU.MaTM*/
             }
 
             string sqlHoaDonDichVu = "SELECT MaTP, SoLuong, DonGia FROM TBLDICHVU WHERE MaTM = '" + txtMaTMHD.Text + "'";
-            DataTable dataTable = Function.GetDataToTable(sqlHoaDonDichVu);
- 
+            SystemTableData dataTable = Function.GetDataToTable(sqlHoaDonDichVu);
+
             DataGridViewRow selectedRow = dataGridView2.SelectedRows[0];
             string maTMHD = selectedRow.Cells["MaTM"].Value.ToString();
             string maPhongHD = selectedRow.Cells["MaPhong"].Value.ToString();
@@ -540,6 +553,7 @@ ON tblTHUEMAY.MaTM = tblDICHVU.MaTM*/
             string donGiaHD = selectedRow.Cells["DonGia"].Value.ToString();
             string maNV = selectedRow.Cells["MaNV"].Value.ToString();
             string tongTienHD = txtTongTienHoaDon.Text;
+            //Thề chả hiểu cái lỗi này luôn, rõ ràng có cái txt này mà @@, máy toi cũng bị :))
             string tongTienBangChu = lblTien.Text;
             DateTime gioVao = Convert.ToDateTime(selectedRow.Cells["GioVao"].Value);
             DateTime gioRa = Convert.ToDateTime(selectedRow.Cells["GioRa"].Value);
@@ -683,6 +697,253 @@ ON tblTHUEMAY.MaTM = tblDICHVU.MaTM*/
             exSheet.Name = "Hóa đơn nhập";
             exApp.Visible = true;
         }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string sqlSearch = "SELECT tblPHIEUNHAPHANG.MaPN, tblPHIEUNHAPHANG.Soluong, tblPHIEUNHAPHANG.Dongianhap, tblPHIEUNHAPHANG.Ngaynhap, tblTHUCPHAM.TenTP " +
+                               "FROM tblPHIEUNHAPHANG " +
+                               "LEFT JOIN tblTHUCPHAM ON tblPHIEUNHAPHANG.MaTP = tblTHUCPHAM.MaTP " +
+                               "WHERE 1=1";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            Console.WriteLine($"Date From: {masTextBoxDateFrom.Text.Trim()}");
+            Console.WriteLine($"Date To: {masTextBoxDateTo.Text.Trim()}");
+            if (masTextBoxDateFrom.Text.Trim() != "00/00/0000" && masTextBoxDateTo.Text.Trim() != "00/00/0000")
+            {
+                DateTime dateFrom;
+                DateTime dateTo;
+
+                if (DateTime.TryParse(masTextBoxDateFrom.Text.Trim(), out dateFrom) && DateTime.TryParse(masTextBoxDateTo.Text.Trim(), out dateTo))
+                {
+                    dateFrom = dateFrom.Date;
+                    dateTo = dateTo.Date;
+
+                    sqlSearch += " AND CAST(tblPHIEUNHAPHANG.Ngaynhap AS DATE) >= @dateFrom AND CAST(tblPHIEUNHAPHANG.Ngaynhap AS DATE) <= @dateTo";
+                    parameters.Add(new SqlParameter("@dateFrom", dateFrom));
+                    parameters.Add(new SqlParameter("@dateTo", dateTo));
+                }
+                else
+                {
+                    MessageBox.Show("Ngày không hợp lệ.");
+                    return;
+                }
+            }
+
+
+            SystemTableData dataTable = Function.GetDataToTableRange(sqlSearch, parameters.ToArray());
+            dataGridView4.DataSource = dataTable;
+
+            dataGridView4.Columns[0].HeaderText = "Mã phiếu nhập";
+            dataGridView4.Columns[1].HeaderText = "Số lượng";
+            dataGridView4.Columns[2].HeaderText = "Đơn giá nhập";
+            dataGridView4.Columns[3].HeaderText = "Ngày nhập";
+            dataGridView4.Columns[4].HeaderText = "Tên thực phẩm";
+
+            dataGridView4.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView4.AllowUserToAddRows = false;
+            dataGridView4.AllowUserToDeleteRows = false;
+
+            double totalMoney = 0;
+            int totalQuantity = 0;
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int quantity = Convert.ToInt32(row["Soluong"]);
+                double price = Convert.ToDouble(row["Dongianhap"]);
+                totalQuantity += quantity;
+                totalMoney += quantity * price;
+            }
+
+            DataRow rowTotal = dataTable.NewRow();
+            rowTotal["MaPN"] = "Tổng";
+            rowTotal["Soluong"] = totalQuantity;
+            rowTotal["Dongianhap"] = totalMoney;
+            dataTable.Rows.Add(rowTotal);
+
+            if (cboBaoCaoThuChi.SelectedIndex == 0)
+            {
+                dataGridView4.Visible = true;
+                dataGridView5.Visible = false;
+                dataGridView6.Visible = false;
+                lblTongTienDichVu.Visible = false;
+                lblTongTienThueMay.Visible = false;
+                label30.Visible = false;
+                label32.Visible = false;
+            }
+            else if (cboBaoCaoThuChi.SelectedIndex == 1)
+            {
+                dataGridView4.Visible = false;
+                dataGridView5.Visible = true;
+                dataGridView6.Visible = false;
+                lblTongTienDichVu.Visible = true;
+                lblTongTienThueMay.Visible = true;
+                label30.Visible = true;
+                label32.Visible = true;
+            }
+            else
+            {
+                dataGridView4.Visible = false;
+                dataGridView5.Visible = false;
+                dataGridView6.Visible = true;
+                lblTongTienDichVu.Visible = false;
+                lblTongTienThueMay.Visible = false;
+                label30.Visible = false;
+                label32.Visible = false;
+            }
+
+            //Tổng thu: 
+
+            string sqlTongThu = "SELECT tblTHUEMAY.MaTM, tblTHUEMAY.MaPhong, tblTHUEMAY.MaMay, tblTHUEMAY.TenKhach, tblTHUEMAY.GioVao, tblTHUEMAY.GioRa, tblDICHVU.MaTP, tblDICHVU.Soluong, tblDICHVU.Dongia, tblTHUEMAY.MaNV " +
+                    "FROM tblTHUEMAY " +
+                    "LEFT JOIN tblDICHVU ON tblTHUEMAY.MaTM = tblDICHVU.MaTM " +
+                    "WHERE 1=1";
+
+            List<SqlParameter> parametersTongThu = new List<SqlParameter>();
+
+            if (masTextBoxDateFrom.Text.Trim() != "00/00/0000" && masTextBoxDateTo.Text.Trim() != "00/00/0000")
+            {
+                DateTime dateFrom;
+                DateTime dateTo;
+
+                if (DateTime.TryParse(masTextBoxDateFrom.Text.Trim(), out dateFrom) && DateTime.TryParse(masTextBoxDateTo.Text.Trim(), out dateTo))
+                {
+                    dateFrom = dateFrom.Date;
+                    dateTo = dateTo.Date;
+
+                    sqlTongThu += " AND CAST(tblTHUEMAY.GioVao AS DATE) >= @dateFrom AND CAST(tblTHUEMAY.GioVao AS DATE) <= @dateTo";
+                    parametersTongThu.Add(new SqlParameter("@dateFrom", dateFrom));
+                    parametersTongThu.Add(new SqlParameter("@dateTo", dateTo));
+                }
+                else
+                {
+                    MessageBox.Show("Ngày không hợp lệ.");
+                    return;
+                }
+            }
+
+            SystemTableData dataTableTongThu = Function.GetDataToTableRange(sqlTongThu, parametersTongThu.ToArray());
+            dataGridView5.DataSource = dataTableTongThu;
+
+            dataGridView5.Columns[0].HeaderText = "Mã phiếu thu";
+            dataGridView5.Columns[1].HeaderText = "Mã phòng";
+            dataGridView5.Columns[2].HeaderText = "Mã máy";
+            dataGridView5.Columns[3].HeaderText = "Tên khách";
+            dataGridView5.Columns[4].HeaderText = "Giờ vào";
+            dataGridView5.Columns[5].HeaderText = "Giờ ra";
+            dataGridView5.Columns[6].HeaderText = "Mã thực phẩm";
+            dataGridView5.Columns[7].HeaderText = "Số lượng";
+            dataGridView5.Columns[8].HeaderText = "Đơn giá";
+            dataGridView5.Columns[9].HeaderText = "Mã nhân viên";
+
+            dataGridView5.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView5.AllowUserToAddRows = false;
+            dataGridView5.AllowUserToDeleteRows = false;
+
+
+            double totalTienThueMay = 0;
+            double totalTienDichVu = 0;
+            double? dongiaDichVu = null;
+            int? soLuongThucPham = null;
+            foreach (DataRow row in dataTableTongThu.Rows)
+            {
+                DateTime gioVao = Convert.ToDateTime(row["GioVao"]);
+                DateTime gioRa = Convert.ToDateTime(row["GioRa"]);
+                if (row["Dongia"] != DBNull.Value)
+                {
+                    dongiaDichVu = Convert.ToDouble(row["Dongia"]);
+                }
+
+                if (row["Soluong"] != DBNull.Value)
+                {
+                    soLuongThucPham = Convert.ToInt32(row["Soluong"]);
+                }
+                TimeSpan thoiGianThue = gioRa - gioVao;
+                double hours = thoiGianThue.TotalHours;
+                double minutes = thoiGianThue.TotalMinutes;
+                double seconds = thoiGianThue.TotalSeconds;
+                totalTienThueMay = (hours * 60 + minutes + seconds / 60.0) * 10000 / 60.0;
+                if (soLuongThucPham != null && dongiaDichVu != null)
+                {
+                    double tienThueMay = soLuongThucPham.Value * 10000;
+                    totalTienThueMay += Math.Round(tienThueMay, 2);
+                    double tienDichVu = soLuongThucPham.Value * dongiaDichVu.Value;
+                    totalTienDichVu += Math.Round(tienDichVu, 2);
+                }
+
+                if (soLuongThucPham != null)
+                {
+                    double tienThueMay = soLuongThucPham.Value * 10000;
+                    totalTienThueMay += Math.Round(tienThueMay, 2);
+                }
+
+            }
+            lblTongTienThueMay.Text = totalTienThueMay.ToString();
+            lblTongTienDichVu.Text = totalTienDichVu.ToString();
+
+
+
+            //Trả lương nhân viên
+            string sqlLuong = "SELECT tblTRALUONG.MaLuong, tblNHANVIEN.TenNV, tblTRALUONG.TienLuong, tblTRALUONG.NgayTraLuong " +
+                        "FROM tblTRALUONG " +
+                        "LEFT JOIN tblNHANVIEN ON tblTRALUONG.MaNV = tblNHANVIEN.MaNV " +
+                        "WHERE 1=1";
+
+            List<SqlParameter> parametersSalary = new List<SqlParameter>();
+
+            if (masTextBoxDateFrom.Text.Trim() != "00/00/0000" && masTextBoxDateTo.Text.Trim() != "00/00/0000")
+            {
+                DateTime dateFrom;
+                DateTime dateTo;
+
+                if (DateTime.TryParse(masTextBoxDateFrom.Text.Trim(), out dateFrom) && DateTime.TryParse(masTextBoxDateTo.Text.Trim(), out dateTo))
+                {
+                    dateFrom = dateFrom.Date;
+                    dateTo = dateTo.Date;
+
+                    sqlLuong += " AND CAST(tblTRALUONG.NgayTraLuong AS DATE) >= @dateFrom AND CAST(tblTRALUONG.NgayTraLuong AS DATE) <= @dateTo";
+                    parametersSalary.Add(new SqlParameter("@dateFrom", dateFrom));
+                    parametersSalary.Add(new SqlParameter("@dateTo", dateTo));
+                }
+                else
+                {
+                    MessageBox.Show("Ngày không hợp lệ.");
+                    return;
+                }
+            }
+
+            SystemTableData dataTableSalary = Function.GetDataToTableRange(sqlLuong, parametersSalary.ToArray());
+
+            dataGridView6.DataSource = dataTableSalary;
+            dataGridView6.Columns[0].HeaderText = "Mã Lương";
+            dataGridView6.Columns[1].HeaderText = "Tên Nhân Viên";
+            dataGridView6.Columns[2].HeaderText = "Tiền Lương";
+            dataGridView6.Columns[3].HeaderText = "Ngày Trả Lương";
+
+            dataGridView6.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView6.AllowUserToAddRows = false;
+            dataGridView6.AllowUserToDeleteRows = false;
+
+            double totalLuong = 0;
+            foreach (DataRow row in dataTableSalary.Rows)
+            {
+                double Luong = Convert.ToDouble(row["TienLuong"]);
+                totalLuong += Luong;
+            }
+
+            DataRow rowTotalLuong = dataTableSalary.NewRow();
+            rowTotalLuong["MaLuong"] = "Tổng";
+            rowTotalLuong["TienLuong"] = totalLuong;
+            dataTableSalary.Rows.Add(rowTotalLuong);
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
@@ -694,8 +955,8 @@ ON tblTHUEMAY.MaTM = tblDICHVU.MaTM*/
 //ban đầu đang veeieets ntn
 //Bắt bbuoojc phải  Trước khi xuất excel thì nhớ chọn cho nó hiện lên các textbox đã nhớ, rồi hẵng xuất :<, phải xử lý hơi nông dân 1 tí để nó chạy đc đã :<
 //Nhóeeeeeee
- // máy móc cũng cần chữa lành á :))
- //Chứ sap =)), cx có trái tym mà, cũng biết tan vỡ mà 💔💔💔
- // nhin ne, khong vao duoc cái window security =))) Win lỏd ruii, khả năng win custom nên bị tắt ahhahaha
- //Tắt đi khởi động lại là ok bạn ạ
- // that khong, thử đi, tắt máy đi mở lại xemmmmmm
+// máy móc cũng cần chữa lành á :))
+//Chứ sap =)), cx có trái tym mà, cũng biết tan vỡ mà 💔💔💔
+// nhin ne, khong vao duoc cái window security =))) Win lỏd ruii, khả năng win custom nên bị tắt ahhahaha
+//Tắt đi khởi động lại là ok bạn ạ
+// that khong, thử đi, tắt máy đi mở lại xemmmmmm
