@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
-// Bên trên có rồi mà bạn   viet lai di xem duoc khong, kieu du lieu datatable sao khong duoc
+
 
 namespace NETNENNET.Class
 {
     internal class Function
     {
         public static SqlConnection Connection;
-        public static string connString; //thong cam, so bi quen =))) khong tum duoc ten bien la gi hic, vang =))
+        public static string connString; 
          
         public static void Connect()
         {
@@ -60,13 +60,27 @@ namespace NETNENNET.Class
             myData.Fill(table);
             return table;
         }
-        //Ơ lỗi rồi, các máy đang bị dính giờ lẫn nhau, vừa mở cái tắt ngay nhưng vẫn bị dính giờ của lần thuê trc =))
 
-        //GetFieldValues
+
         public static string GetFieldValues(string sql)
         {
             string ma = "";
             SqlCommand cmd = new SqlCommand(sql, Function.Connection);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            return ma;
+
+        }
+
+        public static string GetFieldValues2(string sql1)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql1, Function.Connection);
             SqlDataReader reader;
             reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -193,9 +207,63 @@ namespace NETNENNET.Class
             mTemp = mTemp.Substring(0, 1).ToUpper() + mTemp.Substring(1) + " đồng";
             return mTemp;
         }
+        public static string GetFieldValues1(string sql)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, Function.Connection);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            return ma;
 
+        }
+        public static bool IsDate(string d)
+        {
+            string[] parts = d.Split('/');
+            if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) &&
+                (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
+                return true;
+            else
+                return false;
+        }
+        public static string ConvertDateTime(string d)
+        {
+            string[] parts = d.Split('/');
+            string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
+        }
+        public static bool CheckKey(string sql)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Function.Connection);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
 
+        public static void RunSqlDel(string sql)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Function.Connection;
+            cmd.CommandText = sql;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("Dữ liệu đang được dùng, không thể xóa...", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            cmd.Dispose();
+            cmd = null;
+        }
 
     }
-}//duoc roi, viet duoc datatable roi do
+}
 

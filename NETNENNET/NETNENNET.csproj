@@ -47,6 +47,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Function.cs" />
+    <Compile Include="frmBAOTRI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBAOTRI.Designer.cs">
+      <DependentUpon>frmBAOTRI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNHANVIEN.Designer.cs">
+      <DependentUpon>frmNHANVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PHIEUNHAPHANG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PHIEUNHAPHANG.Designer.cs">
+      <DependentUpon>PHIEUNHAPHANG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQUANLYPHONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQUANLYPHONG.Designer.cs">
+      <DependentUpon>frmQUANLYPHONG.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTHUEDICHVU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,11 +85,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TIMHOADON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TIMHOADON.Designer.cs">
+      <DependentUpon>TIMHOADON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRALUONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRALUONG.Designer.cs">
+      <DependentUpon>TRALUONG.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmBAOTRI.resx">
+      <DependentUpon>frmBAOTRI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQUANLYPHONG.resx">
+      <DependentUpon>frmQUANLYPHONG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTHUEDICHVU.resx">
       <DependentUpon>frmTHUEDICHVU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PHIEUNHAPHANG.resx">
+      <DependentUpon>PHIEUNHAPHANG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +122,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TIMHOADON.resx">
+      <DependentUpon>TIMHOADON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRALUONG.resx">
+      <DependentUpon>TRALUONG.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
